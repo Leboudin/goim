@@ -2,6 +2,7 @@ package conf
 
 import (
 	"flag"
+	"fmt"
 	"os"
 	"strconv"
 	"time"
@@ -41,6 +42,7 @@ func init() {
 func Init() (err error) {
 	Conf = Default()
 	_, err = toml.DecodeFile(confPath, &Conf)
+	fmt.Println(Conf.Env)
 	return
 }
 
